@@ -1,0 +1,45 @@
+name: Simple Workflow uses JavaScript Action
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: "npm-cache"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Simple JS Action
+        id: greet
+        uses: ./.github/actions/hello
+        with:
+          who_to_greet: "Nivas_48"
+      - name: Print the time
+        run: echo "The time of the greeting is ${{ steps.greet.outputs.time }}"
+
+      - name: Print environment variables
+        run: |
+          echo "GREETED: $GREETED"
+          echo "GITHUB_ACTION: $GITHUB_ACTION"
+          echo "GITHUB_ACTOR: $GITHUB_ACTOR"
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+          echo "GITHUB_RUN_ID: $GITHUB_RUN_ID"
+          echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
+          echo "GITHUB_SHA: $GITHUB_SHA"
+          echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+          echo "RUNNER_OS: $RUNNER_OS"
+          echo "RUNNER_TEMP: $RUNNER_TEMP"
