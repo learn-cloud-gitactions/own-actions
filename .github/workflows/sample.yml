@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - run: |
-          pwd -r
+          pwd
           ls -la
 
       - name: Simple JS Action
