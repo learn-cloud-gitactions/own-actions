@@ -7,7 +7,7 @@ try {
   core.error('This is an error!');
   core.debug('This is a debug message!');
 
-  const name = core.getInput("who_to_greet", { required: true });
+  const name = core.getInput("who-to-greet", { required: true });
 
   console.log(`Hello ${name}!`);
   core.setOutput("time", new Date().toTimeString());
