@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: cache node modules
         id: cache-node-modules
         uses: actions/cache@v3
@@ -21,6 +21,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - run: |
+          pwd -r
+          ls -la
 
       - name: Simple JS Action
         id: greet
