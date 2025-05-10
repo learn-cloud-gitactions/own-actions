@@ -5,7 +5,7 @@ branding:
   icon: "clock"
   color: "blue"
 inputs: 
-  who-to-greet:
+  who_to_greet:
     description: "Who to greet?"
     required: true
     default: "World"
@@ -19,6 +19,6 @@ runs:
   image: "Dockerfile
 
   args:
-    - who-to-greet=${{ inputs.who-to-greet }}
+    - who-to-greet=${{ inputs.who_to_greet] }}
   env:
     HELLO: "WORLD"
