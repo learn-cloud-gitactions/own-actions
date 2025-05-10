@@ -15,4 +15,4 @@ runs:
   args:
     - ${{ inputs.who_to_greet }}
   env:
-    HELLO: "WORLD"
+    HELLO: ${{ env.HELLO }}

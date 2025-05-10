@@ -26,11 +26,13 @@ jobs:
           pwd
           ls -lar
 
-      - name: Simple JS Action
+      - name: Simple Docker Action
         id: greet
         uses: ./.github/actions/hello-docker
         with:
           who_to_greet: "Nivas_48"
+        env:
+          HELLO: "WORLD"
       - name: Print the time
         run: echo "The time of the greeting is ${{ steps.greet.outputs.time }}"
 
