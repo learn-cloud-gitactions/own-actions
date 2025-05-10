@@ -11,10 +11,8 @@ outputs:
     description: The time of the greeting
 runs:
   using: "docker"
-  # image: 'docker://node:18.16-alpine3.17'
   image: "Dockerfile"
-  # entrypoint:
   args:
     - ${{ inputs.who_to_greet }}
   env:
-    HELLO: WORLD
+    HELLO: "WORLD"
