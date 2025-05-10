@@ -30,7 +30,7 @@ jobs:
         id: greet
         uses: ./.github/actions/hello-docker
         with:
-          who-to-greet: "Nivas_48"
+          who_to_greet: "Nivas_48"
       - name: Print the time
         run: echo "The time of the greeting is ${{ steps.greet.outputs.time }}"
 
