@@ -28,7 +28,7 @@ jobs:
 
       - name: Simple JS Action
         id: greet
-        uses: ./.github/actions/hello
+        uses: ./.github/actions/hello-docker
         with:
           who-to-greet: "Nivas_48"
       - name: Print the time
